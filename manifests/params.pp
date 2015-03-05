@@ -1,3 +1,5 @@
+# This file contains the default parameters for the puppetsymlink module
+#
 class puppetsymlink::params {
   $targetpath = '/opt/puppet/bin'
   $ensurelinks = 'link'
