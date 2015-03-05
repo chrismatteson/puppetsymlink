@@ -1,0 +1,15 @@
+{
+  "name": "chrismatteson-puppetsymlink",
+  "version": "0.0.1",
+  "author": "Chris Matteson",
+  "license": "Apache-2.0",
+  "summary": "This module creates sym links to puppet executabiles in bin directories which are commonly within the user's path to simulate functionality removed in 3.8",
+  "source": "https://github.com/chrismatteson/puppetsymlink",
+  "project_page": "https://github.com/chrismatteson/puppetsymlink",
+  "issues_url": "https://github.com/chrismatteson/puppetsymlink/issues,
+  "operatingsystem_support": [
+    {
+    "operatingsystem":"RedHat",
+    "operatingsystemrelease":[ "6.0", "7.0" ]
+    }
+  "dependencies": []
