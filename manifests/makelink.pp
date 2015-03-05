@@ -1,13 +1,10 @@
 define puppetsymlink::makelink (
+  $targetpath,
   $binpath,
-  $puppetexecpath,
-  $execpath
+  $ensurelinks,
   ) {
-
-  exec { "$binpath/${name}":
-    command => "ln -s $puppetexecpath/${binfiles} $binpath/${name}",
-    onlyif  => "test -s $puppetexecpath/${name}",
-    unless  => "test -s $binpath/${name}",
-    path    => "$execpath",
+  file { "$binpath/${name}":
+    ensure => "$ensurelinks",
+    target => "$targetpath/${name}"
   }
 }

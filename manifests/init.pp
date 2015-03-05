@@ -1,16 +1,19 @@
 class puppetsymlink (
+  $symlinkexecutables = $::symlinkexecutables,
   $binpath = $puppetsymlink::params::binpath,
-  $puppetexecpath = $puppetsymlink::params::puppetexecpath,
-  $binfiles = $puppetsymlink::params::binfiles, 
-  $execpath = $puppetsymlink::params::execpath,
+  $targetpath = $puppetsymlink::params::targetpath,
+  $ensurelinks = $puppetsymlink::params::ensurelinks,
   ) inherits puppetsymlink::params {
 
-  unless $binpath == 'skip' {
-
-    puppetsymlink::makelink { $binfiles:
-      binpath        => $binpath,
-      puppetexecpath => $puppetexecpath,
-      execpath       => $execpath,
+  if $binpath == 'fail' {
+    fail('This operating system is not supported')
+  }
+  else {
+    puppetsymlink::makelink { $symlinkexecutables:
+      ensurelinks => "$ensurelinks",
+      binpath => "$binpath",
+      targetpath => "$targetpath",
     } 
+
   }
 }
