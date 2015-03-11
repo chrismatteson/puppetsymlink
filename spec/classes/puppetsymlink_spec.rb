@@ -47,7 +47,7 @@ describe('puppetsymlink', :type => :class) do
         'mco',
         'pe-man',
       ].each do |bin|
-        should contain_file("/usr/local/bin/#{bin}").with({
+        should contain_file("/usr/bin/#{bin}").with({
           :target => "/opt/puppet/bin/#{bin}",
         })
       end

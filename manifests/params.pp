@@ -7,7 +7,7 @@ class puppetsymlink::params {
     'Linux':   { $binpath = '/usr/local/bin' }
     'Solaris': { $binpath = '/usr/bin' }
     'AIX':     { $binpath = '/usr/bin' }
-    'Darwin':  { $binpath = '/usr/local/bin' }
+    'Darwin':  { $binpath = '/usr/bin' }
     'BSD':     { $binpath = '/usr/bin' }
     default:   { $binpath = 'fail' }
   }
